@@ -1,0 +1,42 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+struct toado{
+	float a,b,c,d,e,f;	
+};
+void nhaptoado(toado &l){
+	cout << "Nhap toa do lan luot a,b,c,d,e,f la: "<< endl;
+	cin >>l.a>>l.b>>l.c>>l.d>>l.e>>l.f;
+}
+void xuattoado(toado l){
+	cout << "A("<<l.a<<";"<<l.b<<")"<<endl;
+	cout << "B("<<l.c<<";"<<l.d<<")"<<endl;
+	cout << "C("<<l.e<<";"<<l.f<<")"<<endl;
+}
+int main(){
+	float T,D,H,G,M,K,J;
+	toado l;
+	nhaptoado(l);
+	xuattoado(l);
+	T= l.c - l.a;
+	D= l.d-l.b;
+	H= l.e - l.a;
+	G= l.f-l.b;
+	K=l.e-l.c;
+	J=l.f-l.d;
+	cout << " vectoAB la: ("<<T<<";"<<D<<")"<<endl;
+	cout << " vectoAC la: ("<<H<<";"<<G<<")"<<endl;
+	cout << " vectoBC la: ("<<K<<";"<<J<<")"<<endl;
+	M=T*G-H*D;
+	float S=fabs(M)/2;
+	cout << "dien tich la: " << S << endl;
+	float Q=sqrt(T*T+D*D);
+	float W=sqrt(H*H+G*G);
+	float E=sqrt(K*K+J*J);
+	float P=Q+W+E;
+	cout<<"chu vi la: "<<P<<endl;
+	float X1= (l.a+l.c+l.e)/3;
+	float X2= (l.b+l.d+l.f)/3;
+	cout << "toa do trong tam la: ("<<X1<<";"<<X2<<")"<<endl;
+	return 0;
+}
